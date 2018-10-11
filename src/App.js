@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Provider } from './context';
+
 import Header from './Header';
 import Contacts from './Contacts';
 
@@ -9,22 +11,14 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header branding="Contact Manager" />
-        <div className="container">
-          <Contacts />
-          {/* <Contact
-            name="Johny Doe"
-            email="johnydoe@gmail.com"
-            phone="555-555-5555"
-          />
-          <Contact
-            name="Karen Smith"
-            email="karen@gmail.com"
-            phone="333-333-3333"
-          /> */}
+      <Provider>
+        <div className="App">
+          <Header branding="Contact Manager" />
+          <div className="container">
+            <Contacts />
+          </div>
         </div>
-      </div>
+      </Provider>
     );
   }
 }
