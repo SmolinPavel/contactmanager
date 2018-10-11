@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import Header from './Header';
+import Contact from './Contact';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header branding="Contact Manager" />
+        <div className="container">
+          <Contact
+            name="Johny Doe"
+            email="johnydoe@gmail.com"
+            phone="555-555-5555"
+          />
+          <Contact
+            name="Karen Smith"
+            email="karen@gmail.com"
+            phone="333-333-3333"
+          />
+        </div>
       </div>
     );
   }
