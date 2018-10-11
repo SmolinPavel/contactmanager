@@ -17,7 +17,8 @@ class Contact extends Component {
   }
 }
 
-Contact.PropTypes = {
+Contact.propTypes = {
+  id: PropTypes.number,
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired

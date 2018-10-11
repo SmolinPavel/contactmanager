@@ -24,7 +24,7 @@ Header.defaultProps = {
   branding: 'My Header'
 };
 
-Header.PropTypes = {
+Header.propTypes = {
   branding: PropTypes.string.isRequired
 };
 
