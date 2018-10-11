@@ -10,8 +10,13 @@ class Contact extends Component {
     this.setState({ opened: !this.state.opened });
   };
 
+  handleDelete = () => {
+    const { id, onDeleteClick } = this.props;
+    onDeleteClick(id);
+  };
+
   render() {
-    const { name, email, phone } = this.props;
+    const { id, name, email, phone } = this.props;
 
     return (
       <div className="card card-body mb-3">
@@ -24,7 +29,7 @@ class Contact extends Component {
           />
           <i
             className="fas fa-times"
-            onClick={this.handleClick}
+            onClick={this.handleDelete}
             style={{ cursor: 'pointer', float: 'right', color: 'red' }}
           />
         </h4>
@@ -43,7 +48,8 @@ Contact.propTypes = {
   id: PropTypes.number,
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired
+  phone: PropTypes.string.isRequired,
+  onDeleteClick: PropTypes.func.isRequired
 };
 
 export default Contact;
